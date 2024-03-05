@@ -1,0 +1,10 @@
+main: net.jahcraft.jahpackpokeballs.main.Main
+name: JahPack-Pokeballs
+version: 1.0.0
+author: Jamboxman5
+api-version: 1.20
+depend:
+commands:
+  Pokeballs:
+  
+  
