@@ -1,4 +1,4 @@
-package net.jahcraft.jahpackpokeballs.main;
+package net.jahcraft.jahpackpokeballs.util;
 
 import java.util.HashSet;
 

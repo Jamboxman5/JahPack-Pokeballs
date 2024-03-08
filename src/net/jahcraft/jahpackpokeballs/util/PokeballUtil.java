@@ -86,19 +86,45 @@ public class PokeballUtil {
 		case TROPICAL_FISH:
 			return 60;
 		case SHEEP:
-			return 127;
+			return 200;
 		case COW:
-			return 127;
+			return 200;
 		case HORSE:
-			return 127;
+			return 200;
 		case PIG:
-			return 127;
+			return 200;
+		case RABBIT:
+			return 200;
+		case ZOMBIE:
+			return 140;
+		case HUSK:
+			return 140;
+		case SKELETON:
+			return 140;
+		case STRAY:
+			return 140;
+		case SPIDER:
+			return 140;
+		case CAVE_SPIDER:
+			return 100;
+		case SILVERFISH:
+			return 255;
+		case BLAZE:
+			return 40;
+		case WITHER_SKELETON:
+			return 40;
+		case GHAST:
+			return 20;
+		case WARDEN:
+			return 3;
+		case WITHER:
+			return 10;
 		default:
-			return 0;
+			return -1;
 		}
 	}
 
-	public static boolean rollCatch(LivingEntity mob, ItemStack pokeball) {
+	public static boolean rollCatch (LivingEntity mob, ItemStack pokeball) throws NotCatchableException {
 		double maxHealth = mob.getAttribute(Attribute.GENERIC_MAX_HEALTH).getValue();
 		double health = mob.getHealth();
 		
@@ -107,6 +133,8 @@ public class PokeballUtil {
 		
 		double captureRate = getCaptureRate(mob.getType());
 		double captureBonus = getCaptureBonus(pokeball);
+		
+		if (captureRate == -1) throw new NotCatchableException();
 		
 		double alpha = ((numerator / denominator) * captureRate * captureBonus);
 		double beta = 1048560 / Math.sqrt(Math.sqrt(16711680/alpha));

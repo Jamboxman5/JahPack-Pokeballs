@@ -5,6 +5,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import net.jahcraft.jahpackpokeballs.commands.Pokeballs;
 import net.jahcraft.jahpackpokeballs.listeners.PokeballListeners;
+import net.jahcraft.jahpackpokeballs.util.RecipeUtil;
 
 public class Main extends JavaPlugin {
 	
