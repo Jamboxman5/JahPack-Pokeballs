@@ -119,6 +119,8 @@ public class PokeballUtil {
 			return 3;
 		case WITHER:
 			return 10;
+		case WOLF:
+			return 200;
 		default:
 			return -1;
 		}
